@@ -5,6 +5,7 @@ There are the three repos that are part of the eRules Search Engine:
 https://github.com/topcoderinc/TCO_Megahack_eRules_Search_Engine_Frontend
 https://github.com/topcoderinc/TCO_Megahack_eRules_Search_Engine_Backend
 https://github.com/topcoderinc/TCO_Megahack_eRules_Search_Engine_API
+https://github.com/topcoderinc/TCO_Megahack_eRules_Search_Engine_XML_Parser
 
 Please feel free to checkout out our live site (http://tco16.topcoder.com/tco-megahack/) and issue some pull requests on our code!
 
