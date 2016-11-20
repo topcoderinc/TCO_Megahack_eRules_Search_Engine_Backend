@@ -1,0 +1,758 @@
+[
+  {
+    "id": 75070,
+    "name": "Acetaldehyde"
+  },
+  {
+    "id": 60355,
+    "name": "Acetamide"
+  },
+  {
+    "id": 75058,
+    "name": "Acetonitrile"
+  },
+  {
+    "id": 98862,
+    "name": "Acetophenone"
+  },
+  {
+    "id": 53963,
+    "name": "2-Acetylaminofluorene"
+  },
+  {
+    "id": 107028,
+    "name": "Acrolein"
+  },
+  {
+    "id": 79061,
+    "name": "Acrylamide"
+  },
+  {
+    "id": 79107,
+    "name": "Acrylic acid"
+  },
+  {
+    "id": 107131,
+    "name": "Acrylonitrile"
+  },
+  {
+    "id": 107051,
+    "name": "Allyl chloride"
+  },
+  {
+    "id": 92671,
+    "name": "4-Aminobiphenyl"
+  },
+  {
+    "id": 62533,
+    "name": "Aniline"
+  },
+  {
+    "id": 90040,
+    "name": "o-Anisidine"
+  },
+  {
+    "id": 1332214,
+    "name": "Asbestos"
+  },
+  {
+    "id": 71432,
+    "name": "Benzene (including benzene from gasoline)"
+  },
+  {
+    "id": 92875,
+    "name": "Benzidine"
+  },
+  {
+    "id": 98077,
+    "name": "Benzotrichloride"
+  },
+  {
+    "id": 100447,
+    "name": "Benzyl chloride"
+  },
+  {
+    "id": 92524,
+    "name": "Biphenyl"
+  },
+  {
+    "id": 117817,
+    "name": "Bis(2-ethylhexyl)phthalate (DEHP)"
+  },
+  {
+    "id": 542881,
+    "name": "Bis(chloromethyl)ether"
+  },
+  {
+    "id": 75252,
+    "name": "Bromoform"
+  },
+  {
+    "id": 106990,
+    "name": "1,3-Butadiene"
+  },
+  {
+    "id": 156627,
+    "name": "Calcium cyanamide"
+  },
+  {
+    "id": 105602,
+    "name": "Caprolactam"
+  },
+  {
+    "id": 133062,
+    "name": "Captan"
+  },
+  {
+    "id": 63252,
+    "name": "Carbaryl"
+  },
+  {
+    "id": 75150,
+    "name": "Carbon disulfide"
+  },
+  {
+    "id": 56235,
+    "name": "Carbon tetrachloride"
+  },
+  {
+    "id": 463581,
+    "name": "Carbonyl sulfide"
+  },
+  {
+    "id": 120809,
+    "name": "Catechol"
+  },
+  {
+    "id": 133904,
+    "name": "Chloramben"
+  },
+  {
+    "id": 57749,
+    "name": "Chlordane"
+  },
+  {
+    "id": 7782505,
+    "name": "Chlorine"
+  },
+  {
+    "id": 79118,
+    "name": "Chloroacetic acid"
+  },
+  {
+    "id": 532274,
+    "name": "2-Chloroacetophenone"
+  },
+  {
+    "id": 108907,
+    "name": "Chlorobenzene"
+  },
+  {
+    "id": 510156,
+    "name": "Chlorobenzilate"
+  },
+  {
+    "id": 67663,
+    "name": "Chloroform"
+  },
+  {
+    "id": 107302,
+    "name": "Chloromethyl methyl ether"
+  },
+  {
+    "id": 126998,
+    "name": "Chloroprene"
+  },
+  {
+    "id": 1319773,
+    "name": "Cresols/Cresylic acid (isomers and mixture)"
+  },
+  {
+    "id": 95487,
+    "name": "o-Cresol"
+  },
+  {
+    "id": 108394,
+    "name": "m-Cresol"
+  },
+  {
+    "id": 106445,
+    "name": "p-Cresol"
+  },
+  {
+    "id": 98828,
+    "name": "Cumene"
+  },
+  {
+    "id": 94757,
+    "name": "2,4-D, salts and esters"
+  },
+  {
+    "id": 3547044,
+    "name": "DDE"
+  },
+  {
+    "id": 334883,
+    "name": "Diazomethane"
+  },
+  {
+    "id": 132649,
+    "name": "Dibenzofurans"
+  },
+  {
+    "id": 96128,
+    "name": "1,2-Dibromo-3-chloropropane"
+  },
+  {
+    "id": 84742,
+    "name": "Dibutylphthalate"
+  },
+  {
+    "id": 106467,
+    "name": "1,4-Dichlorobenzene(p)"
+  },
+  {
+    "id": 91941,
+    "name": "3,3-Dichlorobenzidene"
+  },
+  {
+    "id": 111444,
+    "name": "Dichloroethyl ether (Bis(2-chloroethyl)ether)"
+  },
+  {
+    "id": 542756,
+    "name": "1,3-Dichloropropene"
+  },
+  {
+    "id": 62737,
+    "name": "Dichlorvos"
+  },
+  {
+    "id": 111422,
+    "name": "Diethanolamine"
+  },
+  {
+    "id": 121697,
+    "name": "N,N-Diethyl aniline (N,N-Dimethylaniline)"
+  },
+  {
+    "id": 64675,
+    "name": "Diethyl sulfate"
+  },
+  {
+    "id": 119904,
+    "name": "3,3-Dimethoxybenzidine"
+  },
+  {
+    "id": 60117,
+    "name": "Dimethyl aminoazobenzene"
+  },
+  {
+    "id": 119937,
+    "name": "3,3′-Dimethyl benzidine"
+  },
+  {
+    "id": 79447,
+    "name": "Dimethyl carbamoyl chloride"
+  },
+  {
+    "id": 68122,
+    "name": "Dimethyl formamide"
+  },
+  {
+    "id": 57147,
+    "name": "1,1-Dimethyl hydrazine"
+  },
+  {
+    "id": 131113,
+    "name": "Dimethyl phthalate"
+  },
+  {
+    "id": 77781,
+    "name": "Dimethyl sulfate"
+  },
+  {
+    "id": 534521,
+    "name": "4,6-Dinitro-o-cresol, and salts"
+  },
+  {
+    "id": 51285,
+    "name": "2,4-Dinitrophenol"
+  },
+  {
+    "id": 121142,
+    "name": "2,4-Dinitrotoluene"
+  },
+  {
+    "id": 123911,
+    "name": "1,4-Dioxane (1,4-Diethyleneoxide)"
+  },
+  {
+    "id": 122667,
+    "name": "1,2-Diphenylhydrazine"
+  },
+  {
+    "id": 106898,
+    "name": "Epichlorohydrin (l-Chloro-2,3-epoxypropane)"
+  },
+  {
+    "id": 106887,
+    "name": "1,2-Epoxybutane"
+  },
+  {
+    "id": 140885,
+    "name": "Ethyl acrylate"
+  },
+  {
+    "id": 100414,
+    "name": "Ethyl benzene"
+  },
+  {
+    "id": 51796,
+    "name": "Ethyl carbamate (Urethane)"
+  },
+  {
+    "id": 75003,
+    "name": "Ethyl chloride (Chloroethane)"
+  },
+  {
+    "id": 106934,
+    "name": "Ethylene dibromide (Dibromoethane)"
+  },
+  {
+    "id": 107062,
+    "name": "Ethylene dichloride (1,2-Dichloroethane)"
+  },
+  {
+    "id": 107211,
+    "name": "Ethylene glycol"
+  },
+  {
+    "id": 151564,
+    "name": "Ethylene imine (Aziridine)"
+  },
+  {
+    "id": 75218,
+    "name": "Ethylene oxide"
+  },
+  {
+    "id": 96457,
+    "name": "Ethylene thiourea"
+  },
+  {
+    "id": 75343,
+    "name": "Ethylidene dichloride (1,1-Dichloroethane)"
+  },
+  {
+    "id": 50000,
+    "name": "Formaldehyde"
+  },
+  {
+    "id": 76448,
+    "name": "Heptachlor"
+  },
+  {
+    "id": 118741,
+    "name": "Hexachlorobenzene"
+  },
+  {
+    "id": 87683,
+    "name": "Hexachlorobutadiene"
+  },
+  {
+    "id": 77474,
+    "name": "Hexachlorocyclopentadiene"
+  },
+  {
+    "id": 67721,
+    "name": "Hexachloroethane"
+  },
+  {
+    "id": 822060,
+    "name": "Hexamethylene-1,6-diisocyanate"
+  },
+  {
+    "id": 680319,
+    "name": "Hexamethylphosphoramide"
+  },
+  {
+    "id": 110543,
+    "name": "Hexane"
+  },
+  {
+    "id": 302012,
+    "name": "Hydrazine"
+  },
+  {
+    "id": 7647010,
+    "name": "Hydrochloric acid"
+  },
+  {
+    "id": 7664393,
+    "name": "Hydrogen fluoride (Hydrofluoric acid)"
+  },
+  {
+    "id": 123319,
+    "name": "Hydroquinone"
+  },
+  {
+    "id": 78591,
+    "name": "Isophorone"
+  },
+  {
+    "id": 58899,
+    "name": "Lindane (all isomers)"
+  },
+  {
+    "id": 108316,
+    "name": "Maleic anhydride"
+  },
+  {
+    "id": 67561,
+    "name": "Methanol"
+  },
+  {
+    "id": 72435,
+    "name": "Methoxychlor"
+  },
+  {
+    "id": 74839,
+    "name": "Methyl bromide (Bromomethane)"
+  },
+  {
+    "id": 74873,
+    "name": "Methyl chloride (Chloromethane)"
+  },
+  {
+    "id": 71556,
+    "name": "Methyl chloroform (1,1,1-Trichloroethane)"
+  },
+  {
+    "id": 78933,
+    "name": "Methyl ethyl ketone (2-Butanone)"
+  },
+  {
+    "id": 60344,
+    "name": "Methyl hydrazine"
+  },
+  {
+    "id": 74884,
+    "name": "Methyl iodide (Iodomethane)"
+  },
+  {
+    "id": 108101,
+    "name": "Methyl isobutyl ketone (Hexone)"
+  },
+  {
+    "id": 624839,
+    "name": "Methyl isocyanate"
+  },
+  {
+    "id": 80626,
+    "name": "Methyl methacrylate"
+  },
+  {
+    "id": 1634044,
+    "name": "Methyl tert butyl ether"
+  },
+  {
+    "id": 101144,
+    "name": "4,4-Methylene bis(2-chloroaniline)"
+  },
+  {
+    "id": 75092,
+    "name": "Methylene chloride (Dichloromethane)"
+  },
+  {
+    "id": 101688,
+    "name": "Methylene diphenyl diisocyanate (MDI)"
+  },
+  {
+    "id": 101779,
+    "name": "4,4′-Methylenedianiline"
+  },
+  {
+    "id": 91203,
+    "name": "Naphthalene"
+  },
+  {
+    "id": 98953,
+    "name": "Nitrobenzene"
+  },
+  {
+    "id": 92933,
+    "name": "4-Nitrobiphenyl"
+  },
+  {
+    "id": 100027,
+    "name": "4-Nitrophenol"
+  },
+  {
+    "id": 79469,
+    "name": "2-Nitropropane"
+  },
+  {
+    "id": 684935,
+    "name": "N-Nitroso-N-methylurea"
+  },
+  {
+    "id": 62759,
+    "name": "N-Nitrosodimethylamine"
+  },
+  {
+    "id": 59892,
+    "name": "N-Nitrosomorpholine"
+  },
+  {
+    "id": 56382,
+    "name": "Parathion"
+  },
+  {
+    "id": 82688,
+    "name": "Pentachloronitrobenzene (Quintobenzene)"
+  },
+  {
+    "id": 87865,
+    "name": "Pentachlorophenol"
+  },
+  {
+    "id": 108952,
+    "name": "Phenol"
+  },
+  {
+    "id": 106503,
+    "name": "p-Phenylenediamine"
+  },
+  {
+    "id": 75445,
+    "name": "Phosgene"
+  },
+  {
+    "id": 7803512,
+    "name": "Phosphine"
+  },
+  {
+    "id": 7723140,
+    "name": "Phosphorus"
+  },
+  {
+    "id": 85449,
+    "name": "Phthalic anhydride"
+  },
+  {
+    "id": 1336363,
+    "name": "Polychlorinated biphenyls (Aroclors)"
+  },
+  {
+    "id": 1120714,
+    "name": "1,3-Propane sultone"
+  },
+  {
+    "id": 57578,
+    "name": "beta-Propiolactone"
+  },
+  {
+    "id": 123386,
+    "name": "Propionaldehyde"
+  },
+  {
+    "id": 114261,
+    "name": "Propoxur (Baygon)"
+  },
+  {
+    "id": 78875,
+    "name": "Propylene dichloride (1,2-Dichloropropane)"
+  },
+  {
+    "id": 75569,
+    "name": "Propylene oxide"
+  },
+  {
+    "id": 75558,
+    "name": "1,2-Propylenimine (2-Methyl aziridine)"
+  },
+  {
+    "id": 91225,
+    "name": "Quinoline"
+  },
+  {
+    "id": 106514,
+    "name": "Quinone"
+  },
+  {
+    "id": 100425,
+    "name": "Styrene"
+  },
+  {
+    "id": 96093,
+    "name": "Styrene oxide"
+  },
+  {
+    "id": 1746016,
+    "name": "2,3,7,8-Tetrachlorodibenzo-p-dioxin"
+  },
+  {
+    "id": 79345,
+    "name": "1,1,2,2-Tetrachloroethane"
+  },
+  {
+    "id": 127184,
+    "name": "Tetrachloroethylene (Perchloroethylene)"
+  },
+  {
+    "id": 7550450,
+    "name": "Titanium tetrachloride"
+  },
+  {
+    "id": 108883,
+    "name": "Toluene"
+  },
+  {
+    "id": 95807,
+    "name": "2,4-Toluene diamine"
+  },
+  {
+    "id": 584849,
+    "name": "2,4-Toluene diisocyanate"
+  },
+  {
+    "id": 95534,
+    "name": "o-Toluidine"
+  },
+  {
+    "id": 8001352,
+    "name": "Toxaphene (chlorinated camphene)"
+  },
+  {
+    "id": 120821,
+    "name": "1,2,4-Trichlorobenzene"
+  },
+  {
+    "id": 79005,
+    "name": "1,1,2-Trichloroethane"
+  },
+  {
+    "id": 79016,
+    "name": "Trichloroethylene"
+  },
+  {
+    "id": 95954,
+    "name": "2,4,5-Trichlorophenol"
+  },
+  {
+    "id": 88062,
+    "name": "2,4,6-Trichlorophenol"
+  },
+  {
+    "id": 121448,
+    "name": "Triethylamine"
+  },
+  {
+    "id": 1582098,
+    "name": "Trifluralin"
+  },
+  {
+    "id": 540841,
+    "name": "2,2,4-Trimethylpentane"
+  },
+  {
+    "id": 108054,
+    "name": "Vinyl acetate"
+  },
+  {
+    "id": 593602,
+    "name": "Vinyl bromide"
+  },
+  {
+    "id": 75014,
+    "name": "Vinyl chloride"
+  },
+  {
+    "id": 75354,
+    "name": "Vinylidene chloride (1,1-Dichloroethylene)"
+  },
+  {
+    "id": 1330207,
+    "name": "Xylenes (isomers and mixture)"
+  },
+  {
+    "id": 95476,
+    "name": "o-Xylenes"
+  },
+  {
+    "id": 108383,
+    "name": "m-Xylenes"
+  },
+  {
+    "id": 106423,
+    "name": "p-Xylenes"
+  },
+  {
+    "id": 0,
+    "name": "Antimony Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Arsenic Compounds (inorganic including arsine)"
+  },
+  {
+    "id": 0,
+    "name": "Beryllium Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Cadmium Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Chromium Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Cobalt Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Coke Oven Emissions"
+  },
+  {
+    "id": 0,
+    "name": "Cyanide Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Glycol ethers"
+  },
+  {
+    "id": 0,
+    "name": "Lead Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Manganese Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Mercury Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Fine mineral fibers"
+  },
+  {
+    "id": 0,
+    "name": "Nickel Compounds"
+  },
+  {
+    "id": 0,
+    "name": "Polycylic Organic Matter"
+  },
+  {
+    "id": 0,
+    "name": "Radionuclides (including radon)"
+  },
+  {
+    "id": 0,
+    "name": "Selenium Compounds"
+  }
+]
