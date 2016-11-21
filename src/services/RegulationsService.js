@@ -106,7 +106,7 @@ async function getDetails(documentId, zip, stateAbbr, city, street, program) {
     details.supInfo = _.get(supInfoRegex.exec(htmlContent), '[1]');
   }
 
-  details.facilities = facilities.Results.FRSFacility;
+  details.facilities = facilities.Results ? facilities.Results.FRSFacility : [];
 
   return details;
 }
