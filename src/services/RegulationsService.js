@@ -59,6 +59,10 @@ async function getDetails(documentId, zip, stateAbbr, city, street, program) {
     output: 'json'
   };
 
+  const documentCfrs = extractCfrs(details.cfrPart.value);
+  details.programs = await co(parser.getProgramByCFR(documentCfrs));
+  details.allRegulations = await co(parser.getRegulationByCFR(documentCfrs));
+
   var showFacility = false;
   if (zip) {
     options['zip_code'] = zip;
@@ -75,19 +79,15 @@ async function getDetails(documentId, zip, stateAbbr, city, street, program) {
   if (stateAbbr) {
     options['state_abbr'] = stateAbbr;
   }
-  if (program) {
+  /*if (program) {
     options['program_name'] = program;
-  }
+  }*/
 
   if (showFacility) {
     facilities = await _makeRequest(request
       .get('http://ofmpub.epa.gov/enviro/frs_rest_services.get_facilities')
       .query(options));
   }
-
-  const documentCfrs = extractCfrs(details.cfrPart.value);
-  details.programs = await co(parser.getProgramByCFR(documentCfrs));
-  details.allRegulations = await co(parser.getRegulationByCFR(documentCfrs));
 
   const htmlLink = _.get(details, 'fileFormats[1]');
   if (htmlLink) {
@@ -127,6 +127,9 @@ getDetails.schema = {
  * @param {Object} criteria the search criteria
  * @param {String} criteria.naics
  * @param {String} criteria.zip
+ * @param {String} criteria.state
+ * @param {String} criteria.city
+ * @param {String} criteria.street
  * @param {String} criteria.substance
  * @param {String} criteria.program
  * @param {Number} criteria.offset
@@ -134,42 +137,77 @@ getDetails.schema = {
  * @returns {{items: Array, total: Number}} the results
  */
 async function search(criteria) {
-  var search = [criteria.substance, criteria.naics];
+  let search = [criteria.substance, criteria.naics];
+  search = _(search).compact().uniq().join(' ');
 
   if (criteria.program) {
-    const { items: programs } = await co(parser.searchPrograms(criteria.program, 0, 10000));
-    const cfrs = _(programs)
-      .flatMap('regulations')
-      .map((item) => item.toJSON().cfr)
-      .compact()
-      .value();
+    return await searchWithProgram(criteria, search);
+  }
 
-    if (cfrs.length == 0) {
-      return { items: [], total: 0 };
+  return await doInternalSearch(criteria, search, criteria.limit, criteria.offset);
+}
+
+/**
+ * Search regulations
+ * @param {Object} criteria the search criteria
+ * @param {String} criteria.naics
+ * @param {String} criteria.zip
+ * @param {String} criteria.state
+ * @param {String} criteria.city
+ * @param {String} criteria.street
+ * @param {String} criteria.substance
+ * @param {String} criteria.program
+ * @param {Number} criteria.offset
+ * @param {Number} criteria.limit
+ * @returns {{items: Array, total: Number}} the results
+ */
+async function searchWithProgram(criteria, search) {
+  let limit = 0, po = criteria.offset, stop = false;
+  let searchResults = {total: 0, items: []};
+
+  while (!stop && searchResults.items.length < criteria.limit) {
+    console.log('Doing: ' + po * criteria.limit);
+    let result = await doInternalSearch(criteria, search, criteria.limit, po * criteria.limit);
+
+    if (result.items.length > 0) {
+      searchResults.items = _.concat(searchResults.items, result.items);
     }
+    searchResults.total = result.total;
 
-    _.each(cfrs, (value) => search.push(value));
+    console.log('Results: ' + searchResults.items.length);
+
+    stop = ++po * criteria.limit >= result.total;
   }
 
-  let keywords = _(search).compact().join(' ');
+  searchResults.items = _.slice(searchResults.items, 0, criteria.limit);
 
+  return searchResults;
+}
+
+
+/**
+ * Private method to search regulations using Regulations.gov API.
+ *
+ * @param {Object} criteria the search criteria
+ * @param {String} search keyword search
+ * @param {Number} limit the results per page
+ * @param {Number} offset the page offset
+ * @returns {{items: Array, total: Number}} the results
+ */
+async function doInternalSearch(criteria, search, limit, offet) {
   let { totalNumRecords: total, documents: items } = await _makeRequest(request
-      .get(`${config.API_BASE_URL}/documents.json`)
-      .query({
-        api_key: config.API_KEY,
-        a: 'EPA',
-        // docst: 'Notice+of+Proposed+Rulemaking+(NPRM)',
-        dct: 'PR',
-        dkt: 'R',
-        cp: 'O',
-        rpp: criteria.limit,
-        po: criteria.offset,
-        s: keywords.length == 0 ? null : keywords,
-      }));
-
-  if (!items) {
-    return { items: [], total: 0 };
-  }
+    .get(`${config.API_BASE_URL}/documents.json`)
+    .query({
+      api_key: config.API_KEY,
+      a: 'EPA',
+      // docst: 'Notice+of+Proposed+Rulemaking+(NPRM)',
+      dct: 'PR',
+      dkt: 'R',
+      cp: 'O',
+      rpp: limit,
+      po: offet,
+      s: search.length > 0 ? search : null,
+    }));
 
   await Promise.map(items, async(item) => {
     const details = await _makeRequest(request
@@ -178,12 +216,28 @@ async function search(criteria) {
         api_key: config.API_KEY,
         documentId: item.documentId,
       }));
-    item.cfrPart = details.cfrPart;
+    item.cfrPart = details.cfrPart || {};
   });
+
+  if (!items) {
+    return { items: [], total: 0 };
+  }
+
+  if (criteria.program) {
+    const { items: programs } = await co(parser.searchPrograms(criteria.program, 0, 10000));
+    const cfrs = _(programs)
+      .flatMap('regulations')
+      .map((item) => item.toJSON().cfr)
+      .compact()
+      .value();
+    items = _.filter(items, (item) =>
+      item.cfrPart.value && item.cfrPart.value.split('CFR').length > 1 && _.some(cfrs, (code) => _.includes(item.cfrPart.value.split('CFR')[1], code))
+    );
+  }
 
   return {
     items,
-    total,
+    total
   };
 }
 
