@@ -11,7 +11,8 @@ export default {
  * @param {Object} res
  */
 async function getDetails(req, res) {
-  const result = await RegulationsService.getDetails(req.query.documentId, req.query.zip);
+  const result = await RegulationsService.getDetails(req.query.documentId, req.query.zip, req.query.stateAbbr, req.query.city,
+    req.query.street, req.query.program);
   res.json(result);
 }
 
