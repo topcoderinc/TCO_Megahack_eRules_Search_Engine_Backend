@@ -60,6 +60,7 @@ async function getDetails(documentId, zip, stateAbbr, city, street, program) {
   };
 
   const documentCfrs = extractCfrs(details.cfrPart.value);
+  details.naics = await co(parser.getNaicsByCFR(documentCfrs));
   details.programs = await co(parser.getProgramByCFR(documentCfrs));
   details.allRegulations = await co(parser.getRegulationByCFR(documentCfrs));
 
@@ -94,16 +95,16 @@ async function getDetails(documentId, zip, stateAbbr, city, street, program) {
     const { text: htmlContent } = await request.get(htmlLink).query({ api_key: config.API_KEY }).endAsync();
 
     const summaryRegex = /SUMMARY: ([\s\S]+?)\n\n/;
-    const addressRegex = /ADDRESSES :([\s\S]+?)\n\n/;
+    const addressRegex = /ADDRESSES: ([\s\S]+?)\n\n/;
     const datesRegex = /DATES: ([\s\S]+?)\n\n/;
     const contactInfoRegex = /FOR FURTHER INFORMATION CONTACT: ([\s\S]+?)\n\n/;
-    const supInfoRegex = /SUPPLEMENTARY INFORMATION: ([\s\S]+?)\[\[Page/;
+    const supInfoRegex = /SUPPLEMENTARY INFORMATION:\n\n([\s\S]+?)\n\n\n/;
 
-    details.summary = _.get(summaryRegex.exec(htmlContent), '[1]');
-    details.dates = _.get(datesRegex.exec(htmlContent), '[1]');
-    details.addresses = _.get(addressRegex.exec(htmlContent), '[1]');
-    details.contact = _.get(contactInfoRegex.exec(htmlContent), '[1]');
-    details.supInfo = _.get(supInfoRegex.exec(htmlContent), '[1]');
+    details.summary = _(summaryRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
+    details.dates = _(datesRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
+    details.addresses = _(addressRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
+    details.contact = _(contactInfoRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
+    details.supInfo = _(supInfoRegex.exec(htmlContent)).get('[1]').replace(/(\n\n)(\[\[)([\w\s\d]+)(\]\])?(\n\n)/g, '').replace(/([^\n])\n/g, ' ');
   }
 
   details.facilities = facilities.Results ? facilities.Results.FRSFacility : [];
@@ -120,7 +121,6 @@ getDetails.schema = {
   street: Joi.string(),
   program: Joi.string(),
 };
-
 
 /**
  * Search regulations
@@ -166,15 +166,12 @@ async function searchWithProgram(criteria, search) {
   let searchResults = {total: 0, items: []};
 
   while (!stop && searchResults.items.length < criteria.limit) {
-    console.log('Doing: ' + po * criteria.limit);
     let result = await doInternalSearch(criteria, search, criteria.limit, po * criteria.limit);
 
     if (result.items.length > 0) {
       searchResults.items = _.concat(searchResults.items, result.items);
     }
     searchResults.total = result.total;
-
-    console.log('Results: ' + searchResults.items.length);
 
     stop = ++po * criteria.limit >= result.total;
   }
@@ -215,6 +212,7 @@ async function doInternalSearch(criteria, search, limit, offet) {
       .query({
         api_key: config.API_KEY,
         documentId: item.documentId,
+        cache: 1,
       }));
     item.cfrPart = details.cfrPart || {};
   });

@@ -43,7 +43,7 @@
     "express-api-error-handler": "^1.0.1",
     "express-domain-middleware": "^0.1.0",
     "express-wrap-async": "^1.0.2",
-    "http-errors": "^1.5.0",
+    "http-errors": "^1.5.1",
     "joi": "^9.0.4",
     "lodash": "^4.16.0",
     "lrs_parser": "git+https://github.com/topcoderinc/TCO_Megahack_eRules_Search_Engine_XML_Parser.git",

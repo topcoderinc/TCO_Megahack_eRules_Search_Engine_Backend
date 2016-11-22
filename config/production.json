@@ -1,5 +1,5 @@
 {
   "VERBOSE_LOGGING": false,
-  "LOAD_PARSER": true,
+  "LOAD_PARSER": false,
   "PARSER_OPTIONS": {}
 }

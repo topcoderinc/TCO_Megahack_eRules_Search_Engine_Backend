@@ -23,4 +23,9 @@ export default {
       method: LookupController.searchSubstances,
     },
   },
+  '/lookups/cities': {
+    get: {
+      method: LookupController.searchCities,
+    },
+  }
 };
