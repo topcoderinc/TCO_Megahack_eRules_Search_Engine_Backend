@@ -98,13 +98,13 @@ async function getDetails(documentId, zip, stateAbbr, city, street, program) {
     const addressRegex = /ADDRESSES: ([\s\S]+?)\n\n/;
     const datesRegex = /DATES: ([\s\S]+?)\n\n/;
     const contactInfoRegex = /FOR FURTHER INFORMATION CONTACT: ([\s\S]+?)\n\n/;
-    const supInfoRegex = /SUPPLEMENTARY INFORMATION:\n\n([\s\S]+?)\n\n\n/;
+    const supInfoRegex = /SUPPLEMENTARY INFORMATION:([\s]*\n\n)([\s\S]+?)\n\<\/pre\>/;
 
-    details.summary = _(summaryRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
-    details.dates = _(datesRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
-    details.addresses = _(addressRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
-    details.contact = _(contactInfoRegex.exec(htmlContent)).get('[1]').replace('\n', ' ');
-    details.supInfo = _(supInfoRegex.exec(htmlContent)).get('[1]').replace(/(\n\n)(\[\[)([\w\s\d]+)(\]\])?(\n\n)/g, '').replace(/([^\n])\n/g, ' ');
+    details.summary = _(summaryRegex.exec(htmlContent)).get('[1]', ' ').replace('\n', ' ');
+    details.dates = _(datesRegex.exec(htmlContent)).get('[1]', ' ').replace('\n', ' ');
+    details.addresses = _(addressRegex.exec(htmlContent)).get('[1]', ' ').replace('\n', ' ');
+    details.contact = _(contactInfoRegex.exec(htmlContent)).get('[1]', ' ').replace('\n', ' ');
+    details.supInfo = _(supInfoRegex.exec(htmlContent)).get('[1]', ' ').replace(/(\n\n\[\[)([\w\s\d]+)(\]\]\n\n)/g, '').replace(/([^\n])\n/g, ' ');
   }
 
   details.facilities = facilities.Results ? facilities.Results.FRSFacility : [];
