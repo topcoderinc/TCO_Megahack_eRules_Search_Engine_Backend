@@ -206,6 +206,10 @@ async function doInternalSearch(criteria, search, limit, offet) {
       s: search.length > 0 ? search : null,
     }));
 
+  if (!items) {
+    return { items: [], total: 0 };
+  }
+
   await Promise.map(items, async(item) => {
     const details = await _makeRequest(request
       .get(`${config.API_BASE_URL}/document.json`)
@@ -216,10 +220,6 @@ async function doInternalSearch(criteria, search, limit, offet) {
       }));
     item.cfrPart = details.cfrPart || {};
   });
-
-  if (!items) {
-    return { items: [], total: 0 };
-  }
 
   if (criteria.program) {
     const { items: programs } = await co(parser.searchPrograms(criteria.program, 0, 10000));
